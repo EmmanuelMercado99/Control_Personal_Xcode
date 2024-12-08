@@ -24,5 +24,13 @@ module.exports = (database) => {
 			type: DataTypes.STRING,
 			allowNull: false,
 		},
+		email:{
+			type: DataTypes.STRING,
+			allowNull: false,
+		},
+		supervisor:{
+			type: DataTypes.STRING,
+			allowNull: true ,
+		}
 	});
 };

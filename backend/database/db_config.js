@@ -5,6 +5,7 @@ const {POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_DB, PORT_DB, HOST_DB} =
 	process.env;
 
 const UserFunction = require("./models/User");
+const TaskFunction = require("./models/Tasks")
 
 const database = new Sequelize(
 	`postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${HOST_DB}:${PORT_DB}/${POSTGRES_DB}`,
@@ -12,6 +13,7 @@ const database = new Sequelize(
 );
 
 UserFunction(database);
+TaskFunction(database)
 
 database
 	.authenticate()
